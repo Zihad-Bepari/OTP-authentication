@@ -23,7 +23,7 @@ func VerifyHandler(w http.ResponseWriter, r *http.Request) {
 
 	if inputOTP == savedOTP {
 		result.Execute(w, "OTP Verified Successfully!")
-		// Delete OTP after successful verification
+
 		database.OtpStore.Lock()
 		delete(database.OtpStore.Data, email)
 		database.OtpStore.Unlock()
