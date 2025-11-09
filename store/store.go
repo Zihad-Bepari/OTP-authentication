@@ -20,7 +20,7 @@ func SendOTP(email, otp string) error {
 	m.SetHeader("Subject", "Your OTP Code")
 	m.SetBody("text/plain", "Your OTP is: "+otp)
 
-	d := gomail.NewDialer("smtp.gmail.com", 587, "zihadbepari420@gmail.com", "vqnm ojmc dtkd qkbc")
+	d := gomail.NewDialer("smtp.gmail.com", 587, "", "")
 
 	return d.DialAndSend(m)
 }
