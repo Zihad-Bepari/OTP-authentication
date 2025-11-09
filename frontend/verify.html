@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-96 border-2 border-black">
+        <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">
+            Enter OTP sent to {{.}}
+        </h2>
+        <form method="POST" action="/verify" class="flex flex-col gap-4">
+            <input type="hidden" name="email" value="{{.}}">
+            <input type="text" name="otp" placeholder="Enter OTP" required
+                class="border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button type="submit"
+                class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition">
+                Verify OTP
+            </button>
+        </form>
+    </div>
+</body>
+</html>
